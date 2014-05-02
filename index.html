@@ -26,7 +26,32 @@
     <script src="./assets/js/bower_components/json2/json2.js"></script>
     <script src="./assets/js/bower_components/underscore/underscore.js"></script>
     <script src="./assets/js/bower_components/backbone/backbone.js"></script>
-    <script src="./assets/js/bower_components/backbone.marionette/lib/core/backbone.marionette.js"></script>
+    <script src="./assets/js/bower_components/backbone.marionette/lib/backbone.marionette.js"></script>
+    <script type="text/javascript">
+        //declare a new app
+        var ContactManager = new Marionette.Application();
+
+        //listen to "initialize:after" event
+        ContactManager.on("initialize:after", function(){
+
+            //wait until your entire application is initialized
+            console.log("Fire ContactManager initialize:after event");
+
+
+        });
+
+        //listen to "start" event
+       ContactManager.on('start', function(){
+
+            //wait until your entire application starts
+            console.log("Fire ContactManager start event");
+
+
+        });
+            //start app
+        ContactManager.start();
+
+    </script>
 
   </body>
 </html>
