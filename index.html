@@ -46,8 +46,12 @@
             mainRegion: "#main-region"
         });
 
-        // define a model
-        ContactManager.Contact = Backbone.Model.extend({});
+        // define a model and its defaults so model is displayed even if attr is missing
+        ContactManager.Contact = Backbone.Model.extend({
+            defaults: {
+                firstName: ""
+            }
+        });
 
         // define a view to display
         ContactManager.ContactView = Marionette.ItemView.extend({
