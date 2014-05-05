@@ -55,7 +55,16 @@
 
         // define a view to display
         ContactManager.ContactView = Marionette.ItemView.extend({
-            template: "#contact-template"
+            template: "#contact-template",
+            events: {//event when p is clicked
+                "click p": "alertPhoneNumber"
+            },
+            alertPhoneNumber :function(){
+            //
+            // if displaying user provided data with html
+            // escape protects from XSS attacks
+                alert(this.model.escape("phoneNumber"))
+            }
         });
 
         ContactManager.on("initialize:after", function(){
