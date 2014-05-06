@@ -40,6 +40,7 @@
           box-sizing: border-box;
 }
 
+/*noinspection CssInvalidHtmlTagReference*/
 article,
 aside,
 details,
@@ -98,6 +99,7 @@ sub {
   bottom: -0.25em;
 }
 
+/*noinspection CssInvalidElement*/
 img {
   width: auto\9;
   height: auto;
@@ -2925,7 +2927,8 @@ table th[class*="span"],
      -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
+    /*noinspection CssInvalidElement*/
+    -moz-background-clip: padding;
           background-clip: padding-box;
 }
 
@@ -5394,7 +5397,8 @@ input[type="submit"].btn.btn-mini {
      -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
+    /*noinspection CssInvalidElement*/
+    -moz-background-clip: padding;
           background-clip: padding-box;
 }
 
