@@ -1,12 +1,10 @@
-// There are two modules. One stores user data,
-// while the other one displays it. The modules
-// are decoupled & communicate via App.reqres.
-
+// module responsible for defining Entities.Contact and Entities.Contacts for storing data
+// uses the request response system so modules can talk to each other via a global object
+// with a very broad API. Note neither Contact nor ContactCollection is connected to the app object
+// but is now connected to the module name
 ContactManager.module("Entities",
     function (Entities, ContactManager, Backbone, Marionette, $, _) {
-        //attributes to the model and no longer to the application
         Entities.Contact = Backbone.Model.extend({});
-        //attributes to the model and no longer to the application
         Entities.ContactCollection = Backbone.Collection.extend({
             model: Entities.Contact,
             comparator: "firstName"
@@ -31,9 +29,10 @@ ContactManager.module("Entities",
                 return contacts;
             }
         };
-
-        // register a request handler "contact:entities"
-        // to get contacts: use ContactManager.request("contact:entities")
+        // ContactManager.reqres is the request response system global object
+        // defined by Marionette at the app level
+        // setHandler registers a request handler "contact:entities"
+        // Use ContactManager.request("contact:entities")to get contacts elsewhere
         ContactManager.reqres.setHandler("contact:entities", function () {
             return API.getContactEntities();
         });
