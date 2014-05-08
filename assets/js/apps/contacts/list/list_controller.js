@@ -9,6 +9,9 @@ ContactManager.module("ContactsApp.List", function(List, ContactManager, Backbon
           //put contacts in List.Contacts collection attribute
         collection: contacts
       });
+        contactsListView.on("itemview:contact:delete", function(childView, model){
+            contacts.remove(model);
+        });
       //render the view in region
       ContactManager.mainRegion.show(contactsListView);
     }

@@ -15,7 +15,8 @@ ContactManager.module("ContactsApp.List", function(List, ContactManager, Backbon
         tagName: "tr",
         template: "#contact-list-item",
         events: {//highlight the row that is clicked
-            "click": "highlightName"
+            "click": "highlightName",
+            "click button": "clickDelete"
         },
 
         highlightName: function(e){
@@ -25,6 +26,15 @@ ContactManager.module("ContactsApp.List", function(List, ContactManager, Backbon
 
             //this view instance's el element
             this.$el.toggleClass("warning");
+        },
+
+        clickDelete: function(e){
+            alert("Button click causes row to highlight " +
+                "after this message cause the listener is " +
+                "on tr element. Next we need to hide the click " +
+                "event from Parent Dom Element using jquery's stop " +
+                "propagation. UnComment next codeline to see in action.");
+            e.stopPropagation();
         }
 
     });
