@@ -1,11 +1,16 @@
-var ContactManager = new Marionette.Application();
+//instantiate a new app
+var ProductManager = new Marionette.Application();
 
-ContactManager.addRegions({
+ProductManager.addRegions({
     mainRegion: "#main-region"
 });
 
 
-ContactManager.on("initialize:after", function () {
-    ContactManager.ContactsApp.List.Controller.listContacts();
+ProductManager.on("initialize:after", function () {
+    //theapp.theModule.theModule.theControllerObject.thefunction
+    //call controller
+    ProductManager.ProductsApp.List.Controller.listProducts();
+    console.log('ProductManager.ProductsApp.List',ProductManager.ProductsApp.List);
+    console.log('ProductsApp.List.Controller',ProductsApp.List.Controller);
 
 });

@@ -1,19 +1,19 @@
-//module responsible for defining views for List.Contact and List.Contacts
-ContactManager.module("ContactsApp.List", function(List, ContactManager, Backbone, Marionette, $, _){
-  List.Contact = Marionette.ItemView.extend({
+//module responsible for defining views for List.Product and List.Products
+ProductManager.module("ProductsApp.List", function(List, ProductManager, Backbone, Marionette, $, _){
+  List.Product = Marionette.ItemView.extend({
     tagName: "li",
-    template: "#contact-list-item"
+    template: "#product-list-item"
   });
 
-  List.Contacts = Marionette.CollectionView.extend({
+  List.Products = Marionette.CollectionView.extend({
     tagName: "ul",
-    itemView: List.Contact
+    itemView: List.Product
   });
 
     // A Grid Row
-    List.Contact = Marionette.ItemView.extend({
+    List.Product = Marionette.ItemView.extend({
         tagName: "tr",
-        template: "#contact-list-item",
+        template: "#product-list-item",
         events: {//highlight the row that is clicked
             "click": "highlightName",
             "click button": "clickDelete"
@@ -35,16 +35,18 @@ ContactManager.module("ContactsApp.List", function(List, ContactManager, Backbon
                 "event from Parent Dom Element using jquery's stop " +
                 "propagation. UnComment next codeline to see in action.");
             e.stopPropagation();
+            // each item keeps a reference to the parent collection: this.model.collection
+            this.model.collection.remove(this.model);
         }
 
     });
 
     // A Grid Table
-    List.Contacts = Marionette.CompositeView.extend({
+    List.Products = Marionette.CompositeView.extend({
         tagName: "table",
         className: "table table-hover",
-        template: "#contact-list",
-        itemView: List.Contact,
+        template: "#product-list",
+        itemView: List.Product,
         itemViewContainer: "tbody"
     });
 });
