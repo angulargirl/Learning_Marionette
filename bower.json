@@ -1,0 +1,22 @@
+{
+  "name": "Marionette_Learning",
+  "version": "0.0.0",
+  "authors": [
+    "Claudia Frers <claudia.frers@gmail.com>"
+  ],
+  "description": "uses Qbuy's project structure",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone.marionette": "~1.8.5",
+    "requirejs": "~2.1.11",
+    "handlebars": "~1.3.0"
+  }
+}
