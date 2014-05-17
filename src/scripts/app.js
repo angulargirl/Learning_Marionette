@@ -11,6 +11,6 @@ ProductManager.on("initialize:after", function () {
     //call controller
     ProductManager.ProductsApp.List.Controller.listProducts();
     console.log('ProductManager.ProductsApp.List',ProductManager.ProductsApp.List);
-    console.log('ProductsApp.List.Controller',ProductsApp.List.Controller);
+    console.log('ProductManager.ProductsApp.List.Controller',ProductManager.ProductsApp.List.Controller);
 
 });
